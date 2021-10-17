@@ -8,20 +8,23 @@
         <h2>Calculator</h2>
 
         <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!-- <p>primo numero</p><input type="text">
+        <!-- <p>primo numero</p><i2nput type="text">
         <p>secondo numero</p><input type="text"> -->
-        <table id = "tbl1">
-            <th>
-                N
-            </th>
+        <table id = "tbl1" border="2">
+            <tr>
+                <th>N1</th><th>OPERATION</th><th id="n2">N2</th><th>RESULT</th>
+            </tr>
         </table>
         <script>
+            
             $("body").append(
-            $("<p> numero </p> <input id = 'inp1' type = 'text'>"),
-            $("<button id = 'btn1'> add </button>").click(function(){
-                var numero = $("inp1").val();
-            $('#tbl1').append('<tr></tr>');
-        }));
+            $("<p> primo numero </p> <input id = 'inp1' type = 'number'>"),
+            $("<p> secondo numero </p> <input id = 'inp2' type = 'number'>"),
+            $("<br><br><button id = 'btn1'> calcola </button>").click(function(){
+            $('#tbl1').append('<tr><td>',$("#inp1").val(),'</td></tr>');
+            $('#tbl1').append('<tr><td>',$("#inp2").val(),'</td></tr>');
+            })
+            );
         </script>
         
 

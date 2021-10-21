@@ -11,20 +11,29 @@
         <!-- <p>primo numero</p><i2nput type="text">
         <p>secondo numero</p><input type="text"> -->
         <table id = "tbl1" border="2">
-            <tr>
-                <th>N1</th><th>OPERATION</th><th id="n2">N2</th><th>RESULT</th>
+            <tr id="tr1">
+                <th >N1</th><th>OPERATION</th><th>N2</th><th>RESULT</th>
             </tr>
         </table>
+            <p>primo numero</p> <input id = 'inp1' type = 'number'>
+            <p>secondo numero</p> <input id = 'inp2' type = 'number'>
+            <button id = 'btn'>+</button>
+            <button id = 'btn'>-</button>
+            <button id = 'btn'>/</button>
+            <button id = 'btn'>*</button>
         <script>
-            
-            $("body").append(
-            $("<p> primo numero </p> <input id = 'inp1' type = 'number'>"),
-            $("<p> secondo numero </p> <input id = 'inp2' type = 'number'>"),
-            $("<br><br><button id = 'btn1'> calcola </button>").click(function(){
-            $('#tbl1').append('<tr><td>',$("#inp1").val(),'</td></tr>');
-            $('#tbl1').append('<tr><td>',$("#inp2").val(),'</td></tr>');
-            })
-            );
+                $("button").click(function(e){     
+                    var num1 = parseInt($('#inp1').val());
+                    var num2 = parseInt($('#inp2').val());
+                    $('#tbl1').append(
+                        "<tr>",
+                            "<td>"+num1+"</td>",
+                            "<td>"+e.target.innerText+"</td>",
+                            "<td>"+num2+"</td>",
+                            "<td>"+eval(num1 + e.target.innerText + num2)+"</td>",
+                        "</tr>"
+                    );
+                })
         </script>
         
 

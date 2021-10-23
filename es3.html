@@ -25,14 +25,19 @@
             $("button").click(function(e){     
                 var num1 = parseInt($('#inp1').val());
                 var num2 = parseInt($('#inp2').val());
-                $('#tbl1').append(
+                if (isNaN(num1)) {
+                    num1 = 0;
+                }if (isNaN(num2)) {
+                    num2 = 0;
+                }
+                localStorage.setItem($('#tbl1').append(
                     "<tr>",
                         "<td>"+num1+"</td>",
                         "<td>"+e.target.innerText+"</td>",
                         "<td>"+num2+"</td>",
                         "<td>"+eval(num1 + e.target.innerText + num2)+"</td>",
                     "</tr>"
-                );
+                ));
             })
         </script>
         

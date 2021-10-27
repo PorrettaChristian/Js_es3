@@ -30,15 +30,20 @@
                 }if (isNaN(num2)) {
                     num2 = 0;
                 }
-                localStorage.setItem($('#tbl1').append(
+                var tab = $('#tbl1').append(
                     "<tr>",
                         "<td>"+num1+"</td>",
                         "<td>"+e.target.innerText+"</td>",
                         "<td>"+num2+"</td>",
                         "<td>"+eval(num1 + e.target.innerText + num2)+"</td>",
                     "</tr>"
-                ));
+                );
+                localStorage.setItem("tabAgg", tab);
+                document.getElementById("tbl1").innerHTML = JSON.parse(localStorage.getItem("tabAgg"));
             })
+            
+            
+            
         </script>
         
 

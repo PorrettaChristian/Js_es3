@@ -15,13 +15,15 @@
                 <th >N1</th><th>MARK</th><th>N2</th><th>RESULT</th>
             </tr>
         </table>
-            <p>primo numero</p> <input id = 'inp1' type = 'number' placeholder="first number">
-            <p>secondo numero</p> <input id = 'inp2' type = 'number'placeholder="second  number">
+            <p>primo numero</p> <input id = 'inp1' type = 'number' placeholder="First number">
+            <p>secondo numero</p> <input id = 'inp2' type = 'number'placeholder="Second  number">
             <button>+</button>
             <button>-</button>
             <button>/</button>
             <button>*</button>
         <script>
+            // var key = "tab";
+            // var myItem = localStorage.getItem(key);
             $("button").click(function(e){     
                 var num1 = parseInt($('#inp1').val());
                 var num2 = parseInt($('#inp2').val());
@@ -35,17 +37,14 @@
                         "<td>"+num1+"</td>",
                         "<td>"+e.target.innerText+"</td>",
                         "<td>"+num2+"</td>",
-                        "<td>"+eval(num1 + e.target.innerText + num2)+"</td>",
+                        "<td>"+ eval(num1 + e.target.innerText + num2) +"</td>",
                     "</tr>"
                 );
-                // localStorage.setItem("tabAgg", tab);
+                // localStorage.setItem(key, $('#tbl1'));
                 
             })
             
-            
-            
         </script>
-        
 
     </body>  
 </html>
